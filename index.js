@@ -70,5 +70,10 @@ app.post('/pay', async (req, res) => {
 app.get("/", (req, res) => {
   res.send("M-Pesa STK Backend is running");
 });
+// M-Pesa Callback endpoint
+app.post('/callback', (req, res) => {
+  console.log('M-Pesa Callback Data:', req.body);
+  res.status(200).send('Callback received');
+});
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
